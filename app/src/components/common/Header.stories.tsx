@@ -1,6 +1,6 @@
-import { Meta, Story } from "@storybook/react"
-import React from "react"
-import { Header, HeaderProps } from "./Header"
+import { Meta, Story } from '@storybook/react'
+import React from 'react'
+import { Header, HeaderProps } from './Header'
 
 export default {
   title: 'Common/Header',
