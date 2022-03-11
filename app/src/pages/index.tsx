@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <Box>
       <chakra.h1>Hello Jest!</chakra.h1>
+      <button data-test-id="hoge-button">hoge</button>
     </Box>
   )
 }
