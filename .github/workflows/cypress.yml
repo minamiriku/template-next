@@ -22,6 +22,7 @@ jobs:
         working-directory: ./app
         run: yarn install --frozen-lockfile --prefer-offline
       - name: Run cypress
+        working-directory: ./app
         uses: cypress-io/github-action@v2
         with:
           install: false
