@@ -24,5 +24,6 @@ jobs:
       - name: Run cypress
         uses: cypress-io/github-action@v2
         with:
-          install: false
+          working-directory: ./app
+          install-command: yarn --frozen-lockfile --silent
           config: baseUrl=${{ github.event.deployment_status.target_url }}
