@@ -26,4 +26,6 @@ jobs:
         with:
           working-directory: ./app
           install: false
+          browser: chrome
+          headless: true
           config: baseUrl=${{ github.event.deployment_status.target_url }}
