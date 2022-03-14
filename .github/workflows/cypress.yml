@@ -28,4 +28,5 @@ jobs:
           install: false
           browser: chrome
           headless: true
+          wait-on-timeout: 120
           config: baseUrl=${{ github.event.deployment_status.target_url }}
