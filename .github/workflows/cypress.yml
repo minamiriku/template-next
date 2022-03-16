@@ -25,5 +25,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           working-directory: ./app
+          browser: chrome
+          headless: true
           install: false
           config: baseUrl=${{ github.event.deployment_status.target_url }}
