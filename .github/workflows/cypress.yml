@@ -5,11 +5,21 @@ on: deployment_status
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node12.18.3-chrome87-ff82
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
+      - name: Start App
+        run: |
+          yarn
+          yarn build
+          yarn start &
+
+      - uses: cypress-io/github-action@v2
         with:
-          browser: chrome
+          wait-on: "http://localhost:4321"
+          working-directory: app
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: Cypress E2E Videos
+          path: app/cypress/videos
