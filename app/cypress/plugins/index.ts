@@ -19,4 +19,11 @@
 module.exports = (_on: Cypress.PluginEvents, _config: Cypress.PluginConfig) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+  _on('before:browser:launch', (browser, launchOptions) => {
+    launchOptions.preferences.darkTheme = true
+    if (browser.name === 'chrome') {
+      launchOptions.args.push('--disable-dev-shm-usage')
+      return launchOptions
+    }
+  })
 }
